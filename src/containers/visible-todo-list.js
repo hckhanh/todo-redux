@@ -1,10 +1,21 @@
 import { connect } from 'react-redux';
-import { toggleTodo, clearAllTodo } from '../actions';
+import { toggleTodo, clearAllTodo, TodoFilter } from '../actions';
 import TodoList from '../components/todo-list';
+
+function getTodoByFilter(todos, filter) {
+  switch (filter) {
+    case TodoFilter.SHOW_ALL_TODO:
+      return todos;
+    case TodoFilter.SHOW_DONE_TODO:
+      return todos.filter(todo => todo.done);
+    case TodoFilter.SHOW_UNDONE_TODO:
+      return todos.filter(todo => !todo.done);
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
-    todos: state.todos
+    todos: getTodoByFilter(state.todos, state.todoFilter)
   }
 }
 

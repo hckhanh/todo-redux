@@ -37,9 +37,18 @@ function todos(state = [], action) {
   }
 }
 
+function todoFilter(state = Actions.TodoFilter.SHOW_ALL_TODO, action) {
+  switch (action.type) {
+    case Actions.SET_TODO_FILTER:
+      return action.todoFilter;
+    default:
+      return state;
+  }
+}
+
 /**
  * reducer of TodoApp
  */
-const todoApp = combineReducers({ todos });
+const todoApp = combineReducers({ todos, todoFilter });
 
 export default todoApp;

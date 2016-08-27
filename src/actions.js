@@ -10,6 +10,16 @@ export const CLEAR_ALL_TODO = 'CLEAR_ALL_TODO';
 
 export const UNDO_ACTION = 'UNDO_ACTION';
 
+export const SHOW_DONE_TODO = 'SHOW_DONE_TODO';
+
+export const SET_TODO_FILTER = 'SET_TODO_FILTER';
+
+export const TodoFilter = {
+  SHOW_ALL_TODO: 'SHOW_ALL_TODO',
+  SHOW_DONE_TODO: 'SHOW_DONE_TODO',
+  SHOW_UNDONE_TODO: 'SHOW_UNDONE_TODO'
+};
+
 /**
  * action creators
  */
@@ -28,4 +38,8 @@ export function clearAllTodo() {
 
 export function undoAction() {
   return { type: UNDO_ACTION };
+}
+
+export function setFilterTodo(todoFilter) {
+  return { type: SET_TODO_FILTER, todoFilter };
 }

@@ -10,8 +10,10 @@ let AddTodo = ({ dispatch }) => {
     <div>
       <input type="text" ref={input => inputText = input} />
       <input type="button" value="Add" onClick={e => {
-        dispatch(addTodo(currentId++, inputText.value));
-        inputText.value = '';
+        if (inputText.value) {
+          dispatch(addTodo(currentId++, inputText.value));
+          inputText.value = '';
+        }
       } } />
     </div>
   );
