@@ -3,7 +3,8 @@ import React, { PropTypes } from 'react';
 const Todo = ({text, done, onToggleTodo}) => {
   return (
     <li>
-      <input type="checkbox" checked={done} onChange={onToggleTodo} /> {text}
+      <input type="checkbox" checked={done} onChange={onToggleTodo} />
+      <span style={{ textDecoration: done ? 'line-through' : 'none' }}>{text}</span>
     </li>
   );
 }
