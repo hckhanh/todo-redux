@@ -17,18 +17,21 @@ function todos(state = [], action) {
       return [
         ...state,
         {
+          id: action.id,
           text: action.text,
           done: false
         }
       ];
     case Actions.TOGGLE_TODO:
-      return state.todos.map(todo => {
+      return state.map(todo => {
         if (todo.id === action.id) {
-          return Object.assign({}, todo, { done: !action.done });
+          return Object.assign({}, todo, { done: !todo.done });
         }
 
         return todo;
       })
+    case Actions.CLEAR_ALL_TODO:
+      return [];
     default: // include CLEAR_ALL_TODO
       return state;
   }

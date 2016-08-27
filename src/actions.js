@@ -14,8 +14,8 @@ export const UNDO_ACTION = 'UNDO_ACTION';
  * action creators
  */
 
-export function addTodo(text) {
-  return { type: ADD_TODO, text };
+export function addTodo(id, text) {
+  return { type: ADD_TODO, id, text };
 }
 
 export function toggleTodo(id) {

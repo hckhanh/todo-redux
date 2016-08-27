@@ -1,15 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-      <h1>TODO App</h1>
+import AddTodo from './containers/add-todo';
+import VisibleTodoList from './containers/visible-todo-list';
 
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <div>
+      <AddTodo />
+      <VisibleTodoList />
+    </div>
+  );
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
