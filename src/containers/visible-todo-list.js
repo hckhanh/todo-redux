@@ -10,8 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onToggleTodo: (id) => dispatch(toggleTodo(id)),
-    onClearAll: () => dispatch(clearAllTodo())
+    onToggleTodo: (id) => dispatch(toggleTodo(id))
   }
 }
 
