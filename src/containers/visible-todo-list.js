@@ -15,7 +15,7 @@ function getTodoByFilter(todos, filter) {
 
 const mapStateToProps = (state) => {
   return {
-    todos: getTodoByFilter(state.todos, state.todoFilter)
+    todos: getTodoByFilter(state.todos.present, state.todoFilter)
   }
 }
 

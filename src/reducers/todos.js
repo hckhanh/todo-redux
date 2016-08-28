@@ -1,3 +1,4 @@
+import undoable from 'redux-undo'
 import * as Actions from '../actions'
 
 /**
@@ -32,7 +33,7 @@ function todo(state, action) {
 /**
  * reducer of todos state
  */
-export default function todos(state = [], action) {
+function todos(state = [], action) {
   switch (action.type) {
     case Actions.ADD_TODO:
       return [
@@ -50,3 +51,7 @@ export default function todos(state = [], action) {
       return state
   }
 }
+
+const undoableTodos = undoable(todos);
+
+export default undoableTodos;

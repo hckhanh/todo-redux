@@ -8,8 +8,6 @@ export const TOGGLE_TODO = 'TOGGLE_TODO'
 
 export const CLEAR_ALL_TODO = 'CLEAR_ALL_TODO'
 
-export const UNDO_ACTION = 'UNDO_ACTION'
-
 export const SHOW_DONE_TODO = 'SHOW_DONE_TODO'
 
 export const SET_TODO_FILTER = 'SET_TODO_FILTER'
@@ -40,10 +38,6 @@ export function toggleTodo(id) {
 
 export function clearAllTodo() {
   return { type: CLEAR_ALL_TODO }
-}
-
-export function undoAction() {
-  return { type: UNDO_ACTION }
 }
 
 export function setFilterTodo(todoFilter) {
