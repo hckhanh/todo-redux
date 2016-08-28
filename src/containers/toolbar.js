@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { toggleTodo, clearAllTodo, setFilterTodo, TodoFilter } from '../actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { toggleTodo, clearAllTodo, setFilterTodo, TodoFilter } from '../actions'
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -19,10 +19,10 @@ const Toolbar = ({ onClearAllTodo, onShowDoneTodo, onShowUndoneTodo, onShowAllTo
       <a href="#" style={{ paddingRight: '5px' }} onClick={onShowAllTodo}>Show all</a>
       <a href="#" onClick={onClearAllTodo}>Clear all</a>
     </div>
-  );
+  )
 }
 
 export default connect(
   null,
   mapDispatchToProps
-)(Toolbar);
+)(Toolbar)

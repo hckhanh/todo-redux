@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import AddTodo from '../containers/add-todo';
-import VisibleTodoList from '../containers/visible-todo-list';
-import Toolbar from '../containers/toolbar';
+import AddTodo from '../containers/add-todo'
+import VisibleTodoList from '../containers/visible-todo-list'
+import Toolbar from '../containers/toolbar'
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <Toolbar />
       <VisibleTodoList />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

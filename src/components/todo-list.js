@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import Todo from './todo';
+import React, { PropTypes } from 'react'
+import { connect } from 'react-redux'
+import Todo from './todo'
 
 let TodoList = ({ todos, onToggleTodo, onEditTodo, onSelectTodo, onUnselectTodo }) => {
   return (
@@ -19,7 +19,7 @@ let TodoList = ({ todos, onToggleTodo, onEditTodo, onSelectTodo, onUnselectTodo 
         ))
       }
     </ul>
-  );
+  )
 }
 
 TodoList.propTypes = {
@@ -30,4 +30,4 @@ TodoList.propTypes = {
   }).isRequired).isRequired
 }
 
-export default TodoList;
+export default TodoList

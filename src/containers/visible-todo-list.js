@@ -1,15 +1,15 @@
-import { connect } from 'react-redux';
-import { toggleTodo, clearAllTodo, editTodo, selectTodo, unselectTodo, TodoFilter } from '../actions';
-import TodoList from '../components/todo-list';
+import { connect } from 'react-redux'
+import { toggleTodo, clearAllTodo, editTodo, selectTodo, unselectTodo, TodoFilter } from '../actions'
+import TodoList from '../components/todo-list'
 
 function getTodoByFilter(todos, filter) {
   switch (filter) {
     case TodoFilter.SHOW_ALL_TODO:
-      return todos;
+      return todos
     case TodoFilter.SHOW_DONE_TODO:
-      return todos.filter(todo => todo.done);
+      return todos.filter(todo => todo.done)
     case TodoFilter.SHOW_UNDONE_TODO:
-      return todos.filter(todo => !todo.done);
+      return todos.filter(todo => !todo.done)
   }
 }
 
@@ -31,6 +31,6 @@ const mapDispatchToProps = (dispatch) => {
 const VisibleTodoList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList);
+)(TodoList)
 
-export default VisibleTodoList;
+export default VisibleTodoList

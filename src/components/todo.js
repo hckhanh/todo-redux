@@ -1,8 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from 'react'
 
 const getTodoComponent = ({ text, done, selected, onSelectTodo, onEditTodo, onUnselectTodo }) => {
-  let todoInput;
-  let saveButtonFocus;
+  let todoInput
+  let saveButtonFocus
 
   if (!selected) {
     return (
@@ -11,7 +11,7 @@ const getTodoComponent = ({ text, done, selected, onSelectTodo, onEditTodo, onUn
         onClick={onSelectTodo}>
         {text}
       </span>
-    );
+    )
   }
 
   return (
@@ -21,13 +21,13 @@ const getTodoComponent = ({ text, done, selected, onSelectTodo, onEditTodo, onUn
         defaultValue={text}
         ref={e => {
           if (e) {
-            e.select();
-            todoInput = e;
+            e.select()
+            todoInput = e
           }
         } }
         onBlur={() => {
           if (!saveButtonFocus) {
-            onUnselectTodo();
+            onUnselectTodo()
           }
         } }
         />
@@ -35,17 +35,17 @@ const getTodoComponent = ({ text, done, selected, onSelectTodo, onEditTodo, onUn
         value="Save"
         onClick={() => {
           if (todoInput.value) {
-            onEditTodo(todoInput.value);
-            onUnselectTodo();
+            onEditTodo(todoInput.value)
+            onUnselectTodo()
           }
         } }
         onMouseOver={() => saveButtonFocus = true }
         onMouseOut={() => {
-          saveButtonFocus = false;
-          todoInput.focus();
+          saveButtonFocus = false
+          todoInput.focus()
         } } />
     </span>
-  );
+  )
 }
 
 const Todo = (props) => {
@@ -56,7 +56,7 @@ const Todo = (props) => {
         onChange={props.onToggleTodo} />
       { getTodoComponent(props) }
     </li>
-  );
+  )
 }
 
 Todo.propTypes = {
@@ -64,4 +64,4 @@ Todo.propTypes = {
   done: PropTypes.bool.isRequired
 }
 
-export default Todo;
+export default Todo
