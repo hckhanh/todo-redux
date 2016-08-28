@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import Todo from './todo';
 
-let TodoList = ({ todos, onToggleTodo, onClearAll }) => {
+let TodoList = ({ todos, onToggleTodo, onEditTodo, onSelectTodo, onUnselectTodo }) => {
   return (
     <ul>
       {
@@ -11,7 +11,11 @@ let TodoList = ({ todos, onToggleTodo, onClearAll }) => {
             key={todo.id}
             text={todo.text}
             done={todo.done}
-            onToggleTodo={() => onToggleTodo(todo.id) } />
+            selected={todo.selected}
+            onToggleTodo={() => onToggleTodo(todo.id) }
+            onEditTodo={(text) => onEditTodo(todo.id, text) }
+            onSelectTodo={(id) => onSelectTodo(todo.id) }
+            onUnselectTodo={(id) => onUnselectTodo(todo.id) } />
         ))
       }
     </ul>

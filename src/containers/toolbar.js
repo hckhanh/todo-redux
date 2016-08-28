@@ -14,10 +14,10 @@ const mapDispatchToProps = (dispatch) => {
 const Toolbar = ({ onClearAllTodo, onShowDoneTodo, onShowUndoneTodo, onShowAllTodo }) => {
   return (
     <div>
-      <a href="#" style={{ paddingRight: '5px' }} onClick={onClearAllTodo}>Clear all</a>
-      <a href="#" style={{ paddingRight: '5px' }} onClick={onShowDoneTodo}>Show done</a>
       <a href="#" style={{ paddingRight: '5px' }} onClick={onShowUndoneTodo}>Show undone</a>
+      <a href="#" style={{ paddingRight: '5px' }} onClick={onShowDoneTodo}>Show done</a>
       <a href="#" style={{ paddingRight: '5px' }} onClick={onShowAllTodo}>Show all</a>
+      <a href="#" onClick={onClearAllTodo}>Clear all</a>
     </div>
   );
 }
