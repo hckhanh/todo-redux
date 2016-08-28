@@ -31,10 +31,10 @@ function todo(state, action) {
         return Object.assign({}, state, { selected: false });
       case Actions.EDIT_TODO:
         return Object.assign({}, state, { text: action.text });
-      default:
-        return state;
     }
   }
+
+  return state;
 }
 
 /**
