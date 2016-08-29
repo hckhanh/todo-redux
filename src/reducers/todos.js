@@ -9,8 +9,7 @@ function todo(state, action) {
     return {
       id: action.id,
       text: action.text,
-      done: false,
-      selected: false
+      done: false
     }
   }
 
@@ -18,10 +17,6 @@ function todo(state, action) {
     switch (action.type) {
       case Actions.TOGGLE_TODO:
         return Object.assign({}, state, { done: !state.done })
-      case Actions.SELECT_TODO:
-        return Object.assign({}, state, { selected: true })
-      case Actions.UNSELECT_TODO:
-        return Object.assign({}, state, { selected: false })
       case Actions.EDIT_TODO:
         return Object.assign({}, state, { text: action.text })
     }
@@ -33,7 +28,7 @@ function todo(state, action) {
 /**
  * reducer of todos state
  */
-function todos(state = [], action) {
+export default function todos(state = [], action) {
   switch (action.type) {
     case Actions.ADD_TODO:
       return [
@@ -41,8 +36,6 @@ function todos(state = [], action) {
         todo(null, action)
       ]
     case Actions.TOGGLE_TODO:
-    case Actions.SELECT_TODO:
-    case Actions.UNSELECT_TODO:
     case Actions.EDIT_TODO:
       return state.map(t => todo(t, action))
     case Actions.CLEAR_ALL_TODO:
@@ -51,9 +44,3 @@ function todos(state = [], action) {
       return state
   }
 }
-
-const undoableTodos = undoable(todos, {
-  filter: includeAction(Actions.EDIT_TODO)
-});
-
-export default undoableTodos;

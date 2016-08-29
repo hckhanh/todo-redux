@@ -12,10 +12,6 @@ export const SHOW_DONE_TODO = 'SHOW_DONE_TODO'
 
 export const SET_TODO_FILTER = 'SET_TODO_FILTER'
 
-export const SELECT_TODO = 'SELECT_TODO'
-
-export const UNSELECT_TODO = 'UNSELECT_TODO'
-
 export const EDIT_TODO = 'EDIT_TODO'
 
 export const TodoFilter = {
@@ -42,14 +38,6 @@ export function clearAllTodo() {
 
 export function setFilterTodo(todoFilter) {
   return { type: SET_TODO_FILTER, todoFilter }
-}
-
-export function selectTodo(id) {
-  return { type: SELECT_TODO, id }
-}
-
-export function unselectTodo(id) {
-  return { type: UNSELECT_TODO, id }
 }
 
 export function editTodo(id, text) {
