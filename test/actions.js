@@ -24,32 +24,11 @@ describe('Action', () => {
       .toEqual({ type: Actions.CLEAR_ALL_TODO })
   })
 
-  it('UNDO_ACTION should be created', () => {
-    expect(Actions.undoAction())
-      .toEqual({ type: Actions.UNDO_ACTION })
-  })
-
   it('SET_TODO_FILTER should be created', () => {
     expect(Actions.setFilterTodo(Actions.TodoFilter.SHOW_ALL_TODO))
       .toEqual({
         type: Actions.SET_TODO_FILTER,
         todoFilter: Actions.TodoFilter.SHOW_ALL_TODO
-      })
-  })
-
-  it('SELECT_TODO should be created', () => {
-    expect(Actions.selectTodo(2))
-      .toEqual({
-        type: Actions.SELECT_TODO,
-        id: 2
-      })
-  })
-
-  it('UNSELECT_TODO should be created', () => {
-    expect(Actions.unselectTodo(3))
-      .toEqual({
-        type: Actions.UNSELECT_TODO,
-        id: 3
       })
   })
 
