@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --port=3000",
     "test": "mocha --recursive --check-leaks --use_strict --compilers js:babel-register",
-    "build": "webpack"
+    "build": "webpack",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -29,7 +31,8 @@
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "redux-undo": "^0.6.1"
+    "redux-undo": "^0.6.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
@@ -44,5 +47,6 @@
     "mocha": "^3.0.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.0"
-  }
+  },
+  "snyk": true
 }
